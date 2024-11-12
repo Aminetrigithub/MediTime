@@ -10,7 +10,7 @@ const [token, setToken] = useState(true)
 
   return (
     <div className="flex items-center justify-between text-small py-4 mb-5 border-b border-b-gray-400">
-      <img src={assets.logo} alt="" className="cursor-pointer w-44" />
+      <img src={assets.logo} alt="" className="cursor-pointer w-44" onClick={() => navigate("/")} />
       <ul className=" hidden md:flex items-start gap-5 font-medium">
         <NavLink to="/">
           <li className="py-1">HOME</li>

@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import MyAppointments from "./pages/MyAppointments";
 import Appointment from "./pages/Appointment";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/my-Appointments" element={<MyAppointments />} />
         <Route path="/appointment" element={<Appointment />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
