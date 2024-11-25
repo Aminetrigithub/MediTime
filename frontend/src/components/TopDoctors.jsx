@@ -13,7 +13,7 @@ const {doctors} = useContext(AppContext)
         {doctors.slice(0, 10).map((item, index) => (
           <div key={index} className="border border-blue-200 rounded-xl overflow-hidden 
           cursor-pointer hover:transition-all duration-500" 
-          onClick={() => navigate(`/appointment/${item._id}`)}>
+          onClick={() => {navigate(`/appointment/${item._id}`); scrollTo(0, 0)}}>
             <img src={item.image} alt="" className="bg-blue-50"/>
             <div className="p-4">
               <div className="flex items-center gap-2 text-sm text-center text-green-500">
