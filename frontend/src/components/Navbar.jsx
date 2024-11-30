@@ -44,6 +44,20 @@ const [token, setToken] = useState(true)
         (<button className="bg-primary text-white px-6 py-2 rounded-full font-light hidden md:block cursor-pointer" 
         onClick={() => navigate("/login")}>Create account</button>)
         }
+        <img src={assets.menu_icon} className="w-6 md:hidden" onClick={() => setShowMenu(true)} />
+        {/* -----------Mobile Menu---------- */}
+        <div className={`${showMenu ? 'fixed w-full': 'h-0 w-0'} md:hidden right-0 top-0 z-20 overflow-hidden bg-white transition-all`} >
+          <div className="flex items-center justify-between px-5 py-6" >
+            <img src={assets.logo} className="w-36" />
+            <img src={assets.cross_icon} onClick={() => setShowMenu(false)} className="w-7" />
+          </div>
+          <ul className="flex flex-col items-center gap-2 mt-5 px-5  to=''text-lg font-medium" >
+            <NavLink onClick={() => setShowMenu(false)} to='/'><p className='px-4 py- rounded inline-block '>Home</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/doctors'><p className='px-4 py- rounded inline-block '>ALL DOCTORS</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/about'><p className='px-4 py- rounded inline-block '>ABOUT</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/contact'><p className='px-4 py- rounded inline-block '>CONTACT</p></NavLink>
+          </ul>
+        </div>
          </div> 
       </div>
   
