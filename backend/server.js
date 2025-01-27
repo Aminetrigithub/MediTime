@@ -3,17 +3,23 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/mongoDB.js'
 import connectCloudinary from './config/cloudinary.js'
+import adminRouter from './routes/adminRoute.js'
 
 // App config:
 const app = express()
 const port = process.env.PORT || 4000
 connectDB();
 connectCloudinary()
-
+console.log(process.env.CLOUDINARY_NAME);
+console.log(process.env.CLOUDINARY_API_KEY)
+console.log(process.env.CLOUDINARY_API_SECRET)
 // Middlewares:
 app.use(express.json())
 app.use(cors())
 
+
 // API endpoints:
+app.use('/api/admin', adminRouter) // localhost:4000/api/admin/add-doctor
+
 app.get('/', (req, res) => res.send('API working!'))
 app.listen(port, () => console.log(`Server started on port ${port} .........`))
