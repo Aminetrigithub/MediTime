@@ -5,14 +5,14 @@ import connectDB from './config/mongoDB.js'
 import connectCloudinary from './config/cloudinary.js'
 import adminRouter from './routes/adminRoute.js'
 
+
 // App config:
 const app = express()
 const port = process.env.PORT || 4000
 connectDB();
 connectCloudinary()
-console.log(process.env.CLOUDINARY_NAME);
-console.log(process.env.CLOUDINARY_API_KEY)
-console.log(process.env.CLOUDINARY_API_SECRET)
+
+
 // Middlewares:
 app.use(express.json())
 app.use(cors())
